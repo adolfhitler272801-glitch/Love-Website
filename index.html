@@ -1,198 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For My Pondatti ❤️</title>
+    <title>For My Pondatti ❤️</title>
 
-<style>
-body {
-    margin:0;
-    font-family:Segoe UI;
-    background:black;
-    color:white;
-    overflow:hidden;
-}
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            padding: 40px;
+            overflow-x: hidden;
+        }
 
-/* LOCK */
-#lock {
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:linear-gradient(135deg,#ff4d6d,#ff758c);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-}
+        .box {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+        }
 
-input {
-    padding:10px;
-    border-radius:20px;
-    border:none;
-    margin:10px;
-}
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #ff4d6d;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-button {
-    padding:10px 20px;
-    border:none;
-    border-radius:20px;
-    cursor:pointer;
-    background:white;
-    color:#ff4d6d;
-}
+        /* Password screen */
+        #lockScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ff758c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+        }
 
-/* MAIN */
-#main {
-    display:none;
-    height:100vh;
-    overflow-y:auto;
-    background:linear-gradient(to right,#ff758c,#ff7eb3);
-    text-align:center;
-    padding:20px;
-}
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+        }
 
-.box {
-    background:rgba(0,0,0,0.4);
-    padding:20px;
-    margin:20px;
-    border-radius:20px;
-    line-height:1.6;
-}
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            color: pink;
+            animation: float 5s linear infinite;
+        }
 
-/* KISS */
-#kiss {
-    position:fixed;
-    font-size:70px;
-    display:none;
-    animation:kiss 1s ease;
-}
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
 
-@keyframes kiss {
-    0%{transform:scale(0); opacity:0;}
-    50%{transform:scale(2); opacity:1;}
-    100%{transform:scale(0); opacity:0;}
-}
+    <script>
+        // Password check
+        function checkPassword() {
+            let pass = document.getElementById("pass").value;
+            if (pass === "1502") {
+                document.getElementById("lockScreen").style.display = "none";
+            } else {
+                alert("Wrong password 😢");
+            }
+        }
 
-/* HEARTS */
-.heart {
-    position:fixed;
-    bottom:-10px;
-    animation:float 5s linear infinite;
-}
+        // Button message
+        function showMessage() {
+            alert("Baby ❤️, I may not be there with you, but I promise I’ll always be there for you 💖");
+        }
 
-@keyframes float {
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-100vh);}
-}
-</style>
+        // Typing effect
+        let text = "I didn’t plan to fall for you… but I’m really glad I did ❤️";
+        let i = 0;
+
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 50);
+            }
+        }
+
+        // Days counter
+        function daysTogether() {
+            let start = new Date("Jan 10, 2026");
+            let now = new Date();
+            let diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+            document.getElementById("days").innerHTML = diff + " days with you ❤️";
+        }
+
+        // Floating hearts
+        function createHearts() {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHearts, 300);
+
+        window.onload = function() {
+            typing();
+            daysTogether();
+        }
+    </script>
+
 </head>
 
 <body>
 
-<div id="lock">
-    <h2>Only For My Girl ❤️</h2>
-    <input type="password" id="pass" placeholder="Enter password">
-    <button onclick="unlock()">Unlock 💖</button>
-</div>
+    <!-- 🔐 Password Screen -->
+    <div id="lockScreen">
+        <h2>Enter Password 💖</h2>
+        <input type="password" id="pass" placeholder="Enter password">
+        <br>
+        <button onclick="checkPassword()">Unlock ❤️</button>
+    </div>
 
-<div id="kiss">💋</div>
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
 
-<div id="main">
+    <h1>Hey Baby ❤️</h1>
 
-<h1>Hey Chaarmi ❤️</h1>
+    <div class="box">
+        <h2>How It All Started 💫</h2>
+        <p>It all started on January 10… just two people talking on Instagram.  
+        I didn’t expect that simple conversation would become something so special.</p>
+    </div>
 
-<div class="box">
-<p id="typing"></p>
-</div>
+    <div class="box">
+        <h2>Our Story 💖</h2>
+        <p>We started as friends… but something about you felt different.  
+        Our vibes matched so well, and slowly you became an important part of my life.</p>
+    </div>
 
-<div class="box">
-<h2>Our Story 💫</h2>
+    <div class="box">
+        <h2>The Day I’ll Never Forget 💌</h2>
+        <p>On February 15, I told you how I feel…  
+        And when you said yes, it became one of the happiest moments for me 💖</p>
+    </div>
 
-<p><b>January 10 ❤️</b><br>
-It all started as a simple Instagram conversation…  
-Just two people talking like normal friends.  
-But slowly, something felt different… something special.</p>
+    <div class="box">
+        <h2 id="typing"></h2>
+    </div>
 
-<p><b>The Vibe 💖</b><br>
-Day by day, our conversations became better…  
-Our vibes matched perfectly, and you became a part of my daily life.</p>
+    <div class="box">
+        <h2 id="days"></h2>
+    </div>
 
-<p><b>February 15 💌</b><br>
-That was the day I finally told you how I feel…  
-I was nervous, but when you said yes…  
-That moment became one of the happiest moments of my life ❤️</p>
-
-<p><b>Now 💫</b><br>
-We may be far from each other…  
-But what we have is real, beautiful, and just the beginning of something amazing 💖</p>
-
-</div>
-
-</div>
-
-<!-- MUSIC -->
-<audio id="music" loop>
-<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
-</audio>
-
-<!-- REAL KISS SOUND -->
-<audio id="kissSound">
-<source src="https://assets.mixkit.co/active_storage/sfx/2143/2143-preview.mp3">
-</audio>
-
-<script>
-
-function unlock(){
-let p=document.getElementById("pass").value;
-
-if(p==="1502"){
-
-document.getElementById("lock").style.display="none";
-
-/* KISS EFFECT */
-let k=document.getElementById("kiss");
-k.style.display="block";
-k.style.left="50%";
-k.style.top="50%";
-
-/* PLAY KISS SOUND */
-document.getElementById("kissSound").play();
-
-setTimeout(()=>{
-k.style.display="none";
-document.getElementById("main").style.display="block";
-document.getElementById("music").play();
-typing();
-},1000);
-
-}else{
-alert("Wrong password 😜");
-}
-}
-
-/* TYPING */
-let t="I didn’t plan to fall for you… but I’m really glad I did ❤️";
-let i=0;
-
-function typing(){
-if(i<t.length){
-document.getElementById("typing").innerHTML+=t.charAt(i);
-i++;
-setTimeout(typing,40);
-}
-}
-
-/* HEARTS */
-function hearts(){
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="❤️";
-h.style.left=Math.random()*100+"vw";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),5000);
-}
-setInterval(hearts,300);
-
-</script>
+    <div class="box">
+        <button onclick="showMessage()">Click Me ❤️</button>
+    </div>
 
 </body>
 </html>
