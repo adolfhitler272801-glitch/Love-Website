@@ -1,137 +1,261 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For My Pondatti ❤️</title>
+<title>For My Pondatti ❤️</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
-            color: white;
-            padding: 40px;
-            overflow-x: hidden;
-        }
+<style>
+body {
+    margin:0;
+    font-family:Segoe UI;
+    background:black;
+    color:white;
+    overflow:hidden;
+}
 
-        .box {
-            background: rgba(0,0,0,0.3);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px;
-        }
+/* LOCK */
+#lock {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#ff4d6d,#ff758c);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
 
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            background: white;
-            color: #ff4d6d;
-            font-size: 16px;
-            cursor: pointer;
-        }
+input {
+    padding:10px;
+    border-radius:20px;
+    border:none;
+    margin:10px;
+}
 
-        /* Floating hearts */
-        .heart {
-            position: fixed;
-            bottom: -10px;
-            color: pink;
-            animation: float 5s linear infinite;
-        }
+button {
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:white;
+    color:#ff4d6d;
+}
 
-        @keyframes float {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
-        }
-    </style>
+/* MAIN */
+#main {
+    display:none;
+    height:100vh;
+    overflow-y:auto;
+    background:linear-gradient(to right,#ff758c,#ff7eb3);
+    text-align:center;
+    padding:20px;
+}
 
-    <script>
-        // Button message
-        function showMessage() {
-            alert("Chaarmi ❤️, I may not be there with you, but I promise I’ll always be there for you 💖");
-        }
+.box {
+    background:rgba(0,0,0,0.4);
+    padding:20px;
+    margin:20px;
+    border-radius:20px;
+}
 
-        // Typing effect
-        let text = "I didn’t plan to fall for you… but I’m really glad I did ❤️";
-        let i = 0;
+/* KISS */
+#kiss {
+    position:fixed;
+    font-size:60px;
+    display:none;
+    animation:kiss 1s ease;
+}
 
-        function typing() {
-            if (i < text.length) {
-                document.getElementById("typing").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 50);
-            }
-        }
+@keyframes kiss {
+    0%{transform:scale(0);}
+    50%{transform:scale(2);}
+    100%{transform:scale(0);}
+}
 
-        // Days counter
-        function daysTogether() {
-            let start = new Date("Jan 10, 2026");
-            let now = new Date();
-            let diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-            document.getElementById("days").innerHTML = diff + " days with you ❤️";
-        }
+/* HEARTS */
+.heart {
+    position:fixed;
+    bottom:-10px;
+    animation:float 5s linear infinite;
+}
 
-        // Floating hearts generator
-        function createHearts() {
-            let heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = Math.random() * 20 + 10 + "px";
-            document.body.appendChild(heart);
+@keyframes float {
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-100vh);}
+}
 
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
+/* CHAT */
+.chat {
+    text-align:left;
+}
 
-        setInterval(createHearts, 300);
+.msg {
+    background:white;
+    color:black;
+    padding:10px;
+    border-radius:10px;
+    margin:5px;
+    display:inline-block;
+}
 
-        window.onload = function() {
-            typing();
-            daysTogether();
-        }
-    </script>
+/* GAME */
+.option {
+    margin:5px;
+}
 
+</style>
 </head>
 
 <body>
 
-    <!-- Background Music -->
-    <audio autoplay loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
-    </audio>
+<div id="lock">
+    <h2>Only For My Girl ❤️</h2>
+    <input type="password" id="pass" placeholder="Enter password">
+    <button onclick="unlock()">Unlock 💖</button>
+</div>
 
-    <h1>Hey Chaarmi Rachael ❤️</h1>
+<div id="kiss">💋</div>
 
-    <div class="box">
-        <h2>How It All Started 💫</h2>
-        <p>It all started on January 10… just two people talking on Instagram.  
-        I didn’t expect that simple conversation would become something so special.</p>
-    </div>
+<div id="main">
 
-    <div class="box">
-        <h2>Our Story 💖</h2>
-        <p>We started as friends… but something about you felt different.  
-        Our vibes matched so well, and slowly you became an important part of my life.</p>
-    </div>
+<h1>Hey Baby❤️</h1>
 
-    <div class="box">
-        <h2>The Day I’ll Never Forget 💌</h2>
-        <p>On February 15, I told you how I feel…  
-        And when you said yes, it became one of the happiest moments for me 💖</p>
-    </div>
+<div class="box">
+<p id="typing"></p>
+</div>
 
-    <div class="box">
-        <h2 id="typing"></h2>
-    </div>
+<div class="box">
+<h2>Our Beginning 💫</h2>
+<p>Jan 10 → where everything started ❤️</p>
+<p>Feb 15 → the day you became mine 💖</p>
+</div>
 
-    <div class="box">
-        <h2 id="days"></h2>
-    </div>
+<!-- CHAT REPLAY -->
+<div class="box">
+<h2>Our Chats 💬</h2>
+<div class="chat" id="chat"></div>
+</div>
 
-    <div class="box">
-        <button onclick="showMessage()">Click Me ❤️</button>
-    </div>
+<!-- QUESTIONS -->
+<div class="box">
+<h2>Answer honestly 😏</h2>
+
+<p>Do you love me?</p>
+<button class="option" onclick="showAns('I knew it ❤️')">Yes ❤️</button>
+<button class="option" onclick="showAns('Still yes 😌')">Maybe 😏</button>
+
+<p id="ans"></p>
+</div>
+
+<!-- MEMORY GAME -->
+<div class="box">
+<h2>Mini Game 🧠</h2>
+<p>When did we start talking?</p>
+<button onclick="game('wrong')">Feb 15</button>
+<button onclick="game('right')">Jan 10</button>
+<button onclick="game('wrong')">March</button>
+
+<p id="gameRes"></p>
+</div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="music" loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+</audio>
+
+<audio id="kissSound">
+<source src="https://www.fesliyanstudios.com/play-mp3/4380">
+</audio>
+
+<script>
+
+function unlock(){
+let p=document.getElementById("pass").value;
+
+if(p==="love"){  // change password
+
+document.getElementById("lock").style.display="none";
+
+let k=document.getElementById("kiss");
+k.style.display="block";
+k.style.left="50%";
+k.style.top="50%";
+
+document.getElementById("kissSound").play();
+
+setTimeout(()=>{
+k.style.display="none";
+document.getElementById("main").style.display="block";
+document.getElementById("music").play();
+typing();
+chatReplay();
+},1000);
+
+}else{
+alert("Wrong password 😜");
+}
+}
+
+/* typing */
+let t="I didn’t plan to fall for you… but I’m really glad I did ❤️";
+let i=0;
+function typing(){
+if(i<t.length){
+document.getElementById("typing").innerHTML+=t.charAt(i);
+i++;
+setTimeout(typing,40);
+}
+}
+
+/* chat replay */
+let msgs=[
+"Hey 🙂",
+"Hi 😊",
+"How are you?",
+"Talking with you feels nice ❤️",
+"I like you...",
+"I love you ❤️"
+];
+
+let c=0;
+function chatReplay(){
+if(c<msgs.length){
+let div=document.createElement("div");
+div.className="msg";
+div.innerText=msgs[c];
+document.getElementById("chat").appendChild(div);
+c++;
+setTimeout(chatReplay,1000);
+}
+}
+
+/* answers */
+function showAns(m){
+document.getElementById("ans").innerHTML=m;
+}
+
+/* game */
+function game(x){
+if(x==="right"){
+document.getElementById("gameRes").innerHTML="You remember everything ❤️";
+}else{
+document.getElementById("gameRes").innerHTML="Nooo 😜 try again";
+}
+}
+
+/* hearts */
+function hearts(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+}
+setInterval(hearts,300);
+
+</script>
 
 </body>
 </html>
