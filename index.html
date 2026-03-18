@@ -12,7 +12,6 @@ body {
     overflow:hidden;
 }
 
-/* LOCK */
 #lock {
     position:fixed;
     width:100%;
@@ -40,7 +39,6 @@ button {
     color:#ff4d6d;
 }
 
-/* MAIN */
 #main {
     display:none;
     height:100vh;
@@ -57,7 +55,6 @@ button {
     border-radius:20px;
 }
 
-/* KISS */
 #kiss {
     position:fixed;
     font-size:60px;
@@ -71,7 +68,6 @@ button {
     100%{transform:scale(0);}
 }
 
-/* HEARTS */
 .heart {
     position:fixed;
     bottom:-10px;
@@ -82,33 +78,13 @@ button {
     0%{transform:translateY(0);}
     100%{transform:translateY(-100vh);}
 }
-
-/* CHAT */
-.chat {
-    text-align:left;
-}
-
-.msg {
-    background:white;
-    color:black;
-    padding:10px;
-    border-radius:10px;
-    margin:5px;
-    display:inline-block;
-}
-
-/* GAME */
-.option {
-    margin:5px;
-}
-
 </style>
 </head>
 
 <body>
 
 <div id="lock">
-    <h2>Only For My Girl ❤️</h2>
+    <h2>Only For My Gurl ❤️</h2>
     <input type="password" id="pass" placeholder="Enter password">
     <button onclick="unlock()">Unlock 💖</button>
 </div>
@@ -117,49 +93,51 @@ button {
 
 <div id="main">
 
-<h1>Hey Baby❤️</h1>
+<h1>Hey Baby ❤️</h1>
 
 <div class="box">
 <p id="typing"></p>
 </div>
 
 <div class="box">
-<h2>Our Beginning 💫</h2>
-<p>Jan 10 → where everything started ❤️</p>
-<p>Feb 15 → the day you became mine 💖</p>
+<h2>Our Story 💫</h2>
+
+<p><b>January 10 ❤️</b><br>
+It all started as a simple Instagram conversation…  
+Just two people talking like normal friends.  
+But slowly, something felt different… something special.</p>
+
+<p><b>The Vibe 💖</b><br>
+Day by day, our conversations became better…  
+Our vibes matched perfectly, and you became a part of my daily life.</p>
+
+<p><b>February 15 💌</b><br>
+That was the day I finally told you how I feel…  
+I was nervous, but when you said yes…  
+That moment became one of the happiest moments of my life ❤️</p>
+
+<p><b>Now 💫</b><br>
+We may be far from each other…  
+But what we have is real, beautiful, and just the beginning of something amazing 💖</p>
+
 </div>
 
-<!-- CHAT REPLAY -->
-<div class="box">
-<h2>Our Chats 💬</h2>
-<div class="chat" id="chat"></div>
-</div>
-
-<!-- QUESTIONS -->
 <div class="box">
 <h2>Answer honestly 😏</h2>
 
-<p>Do you love me?</p>
-<button class="option" onclick="showAns('I knew it ❤️')">Yes ❤️</button>
-<button class="option" onclick="showAns('Still yes 😌')">Maybe 😏</button>
+<p>Do you miss me?</p>
+<button onclick="showAns('I know you do ❤️')">Yes ❤️</button>
+<button onclick="showAns('Still yes 😌')">Maybe 😏</button>
+
+<p>What am I to you?</p>
+<button onclick="showAns('Your favorite person 😍')">Favorite ❤️</button>
+<button onclick="showAns('More than everything 💫')">Everything 💖</button>
 
 <p id="ans"></p>
 </div>
 
-<!-- MEMORY GAME -->
-<div class="box">
-<h2>Mini Game 🧠</h2>
-<p>When did we start talking?</p>
-<button onclick="game('wrong')">Feb 15</button>
-<button onclick="game('right')">Jan 10</button>
-<button onclick="game('wrong')">March</button>
-
-<p id="gameRes"></p>
 </div>
 
-</div>
-
-<!-- AUDIO -->
 <audio id="music" loop>
 <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
 </audio>
@@ -173,7 +151,7 @@ button {
 function unlock(){
 let p=document.getElementById("pass").value;
 
-if(p==="1502"){  // change password
+if(p==="1502"){
 
 document.getElementById("lock").style.display="none";
 
@@ -189,7 +167,6 @@ k.style.display="none";
 document.getElementById("main").style.display="block";
 document.getElementById("music").play();
 typing();
-chatReplay();
 },1000);
 
 }else{
@@ -197,9 +174,9 @@ alert("Wrong password 😜");
 }
 }
 
-/* typing */
 let t="I didn’t plan to fall for you… but I’m really glad I did ❤️";
 let i=0;
+
 function typing(){
 if(i<t.length){
 document.getElementById("typing").innerHTML+=t.charAt(i);
@@ -208,43 +185,10 @@ setTimeout(typing,40);
 }
 }
 
-/* chat replay */
-let msgs=[
-"Hey 🙂",
-"Hi 😊",
-"How are you?",
-"Talking with you feels nice ❤️",
-"I like you...",
-"I love you ❤️"
-];
-
-let c=0;
-function chatReplay(){
-if(c<msgs.length){
-let div=document.createElement("div");
-div.className="msg";
-div.innerText=msgs[c];
-document.getElementById("chat").appendChild(div);
-c++;
-setTimeout(chatReplay,1000);
-}
-}
-
-/* answers */
 function showAns(m){
 document.getElementById("ans").innerHTML=m;
 }
 
-/* game */
-function game(x){
-if(x==="right"){
-document.getElementById("gameRes").innerHTML="You remember everything ❤️";
-}else{
-document.getElementById("gameRes").innerHTML="Nooo 😜 try again";
-}
-}
-
-/* hearts */
 function hearts(){
 let h=document.createElement("div");
 h.className="heart";
