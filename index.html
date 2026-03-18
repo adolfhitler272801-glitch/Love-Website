@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For My Pondatti ❤️</title>
+    <title>For My Princess ❤️</title>
 
     <style>
         body {
@@ -30,7 +30,6 @@
             cursor: pointer;
         }
 
-        /* Password screen */
         #lockScreen {
             position: fixed;
             top: 0;
@@ -52,7 +51,6 @@
             margin-top: 10px;
         }
 
-        /* Floating hearts */
         .heart {
             position: fixed;
             bottom: -10px;
@@ -67,7 +65,6 @@
     </style>
 
     <script>
-        // Password check
         function checkPassword() {
             let pass = document.getElementById("pass").value;
             if (pass === "1502") {
@@ -77,13 +74,11 @@
             }
         }
 
-        // Button message
         function showMessage() {
             alert("Baby ❤️, I may not be there with you, but I promise I’ll always be there for you 💖");
         }
 
-        // Typing effect
-        let text = "I didn’t plan to fall for you… but I’m really glad I did ❤️";
+        let text = "I didn’t expect you… but I’m really glad you came into my life ❤️";
         let i = 0;
 
         function typing() {
@@ -94,7 +89,6 @@
             }
         }
 
-        // Days counter
         function daysTogether() {
             let start = new Date("Jan 10, 2026");
             let now = new Date();
@@ -102,7 +96,6 @@
             document.getElementById("days").innerHTML = diff + " days with you ❤️";
         }
 
-        // Floating hearts
         function createHearts() {
             let heart = document.createElement("div");
             heart.classList.add("heart");
@@ -128,50 +121,83 @@
 
 <body>
 
-    <!-- 🔐 Password Screen -->
-    <div id="lockScreen">
-        <h2>Enter Password 💖</h2>
-        <input type="password" id="pass" placeholder="Enter password">
-        <br>
-        <button onclick="checkPassword()">Unlock ❤️</button>
-    </div>
+<div id="lockScreen">
+    <h2>Enter Password 💖</h2>
+    <input type="password" id="pass" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Unlock ❤️</button>
+</div>
 
-    <!-- Background Music -->
-    <audio autoplay loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
-    </audio>
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
 
-    <h1>Hey Baby ❤️</h1>
+<h1>Hey Pondatti ❤️</h1>
 
-    <div class="box">
-        <h2>How It All Started 💫</h2>
-        <p>It all started on January 10… just two people talking on Instagram.  
-        I didn’t expect that simple conversation would become something so special.</p>
-    </div>
+<div class="box">
+    <h2>How It All Started 💫</h2>
+    <p>It all started on January 10… just a simple conversation on Instagram.  
+    At that time, I never thought you would become this important to me.</p>
+</div>
 
-    <div class="box">
-        <h2>Our Story 💖</h2>
-        <p>We started as friends… but something about you felt different.  
-        Our vibes matched so well, and slowly you became an important part of my life.</p>
-    </div>
+<div class="box">
+    <h2>From Strangers to Something Special 💖</h2>
+    <p>We started talking as friends… but something felt different.  
+    Our conversations were easy, natural, and full of good vibes.  
+    Slowly, without even realizing it, you became part of my daily routine.</p>
+</div>
 
-    <div class="box">
-        <h2>The Day I’ll Never Forget 💌</h2>
-        <p>On February 15, I told you how I feel…  
-        And when you said yes, it became one of the happiest moments for me 💖</p>
-    </div>
+<div class="box">
+    <h2>The Little Things 😊</h2>
+    <p>I started looking forward to your messages.  
+    Even a simple “hi” from you could make my day better.  
+    Sometimes I catch myself smiling at my phone because of you.</p>
+</div>
 
-    <div class="box">
-        <h2 id="typing"></h2>
-    </div>
+<div class="box">
+    <h2>When I Realized 💭</h2>
+    <p>Somewhere along the way, I realized… this isn’t just friendship anymore.  
+    You became someone I care about deeply, someone I don’t want to lose.</p>
+</div>
 
-    <div class="box">
-        <h2 id="days"></h2>
-    </div>
+<div class="box">
+    <h2>The Day I’ll Never Forget 💌</h2>
+    <p>On February 15, I finally told you how I feel.  
+    I was nervous, but I knew I had to be honest.  
+    And when you said yes… it became one of the happiest moments of my life 💖</p>
+</div>
 
-    <div class="box">
-        <button onclick="showMessage()">Click Me ❤️</button>
-    </div>
+<div class="box">
+    <h2>What You Mean to Me ❤️</h2>
+    <p>You are not just someone I talk to…  
+    You are someone who makes my days brighter, my thoughts happier,  
+    and my life a little more meaningful.</p>
+</div>
+
+<div class="box">
+    <h2>Even With Distance 🌍</h2>
+    <p>We may be far apart, but I still feel close to you.  
+    Distance doesn’t scare me… because what we have feels real.</p>
+</div>
+
+<div class="box">
+    <h2>Our Journey ✨</h2>
+    <p>This is just the beginning of something beautiful.  
+    We still have so many memories to create, moments to share,  
+    and a future I’m really excited about… with you 💫</p>
+</div>
+
+<div class="box">
+    <h2 id="typing"></h2>
+</div>
+
+<div class="box">
+    <h2 id="days"></h2>
+</div>
+
+<div class="box">
+    <button onclick="showMessage()">Click Me ❤️</button>
+</div>
 
 </body>
 </html>
