@@ -12,6 +12,7 @@ body {
     overflow:hidden;
 }
 
+/* LOCK */
 #lock {
     position:fixed;
     width:100%;
@@ -39,6 +40,7 @@ button {
     color:#ff4d6d;
 }
 
+/* MAIN */
 #main {
     display:none;
     height:100vh;
@@ -53,21 +55,24 @@ button {
     padding:20px;
     margin:20px;
     border-radius:20px;
+    line-height:1.6;
 }
 
+/* KISS */
 #kiss {
     position:fixed;
-    font-size:60px;
+    font-size:70px;
     display:none;
     animation:kiss 1s ease;
 }
 
 @keyframes kiss {
-    0%{transform:scale(0);}
-    50%{transform:scale(2);}
-    100%{transform:scale(0);}
+    0%{transform:scale(0); opacity:0;}
+    50%{transform:scale(2); opacity:1;}
+    100%{transform:scale(0); opacity:0;}
 }
 
+/* HEARTS */
 .heart {
     position:fixed;
     bottom:-10px;
@@ -84,7 +89,7 @@ button {
 <body>
 
 <div id="lock">
-    <h2>Only For My Gurl ❤️</h2>
+    <h2>Only For My Girl ❤️</h2>
     <input type="password" id="pass" placeholder="Enter password">
     <button onclick="unlock()">Unlock 💖</button>
 </div>
@@ -93,7 +98,7 @@ button {
 
 <div id="main">
 
-<h1>Hey Baby ❤️</h1>
+<h1>Hey Chaarmi ❤️</h1>
 
 <div class="box">
 <p id="typing"></p>
@@ -122,28 +127,16 @@ But what we have is real, beautiful, and just the beginning of something amazing
 
 </div>
 
-<div class="box">
-<h2>Answer honestly 😏</h2>
-
-<p>Do you miss me?</p>
-<button onclick="showAns('I know you do ❤️')">Yes ❤️</button>
-<button onclick="showAns('Still yes 😌')">Maybe 😏</button>
-
-<p>What am I to you?</p>
-<button onclick="showAns('Your favorite person 😍')">Favorite ❤️</button>
-<button onclick="showAns('More than everything 💫')">Everything 💖</button>
-
-<p id="ans"></p>
 </div>
 
-</div>
-
+<!-- MUSIC -->
 <audio id="music" loop>
 <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
 </audio>
 
+<!-- REAL KISS SOUND -->
 <audio id="kissSound">
-<source src="https://www.fesliyanstudios.com/play-mp3/4380">
+<source src="https://assets.mixkit.co/active_storage/sfx/2143/2143-preview.mp3">
 </audio>
 
 <script>
@@ -155,11 +148,13 @@ if(p==="1502"){
 
 document.getElementById("lock").style.display="none";
 
+/* KISS EFFECT */
 let k=document.getElementById("kiss");
 k.style.display="block";
 k.style.left="50%";
 k.style.top="50%";
 
+/* PLAY KISS SOUND */
 document.getElementById("kissSound").play();
 
 setTimeout(()=>{
@@ -174,6 +169,7 @@ alert("Wrong password 😜");
 }
 }
 
+/* TYPING */
 let t="I didn’t plan to fall for you… but I’m really glad I did ❤️";
 let i=0;
 
@@ -185,10 +181,7 @@ setTimeout(typing,40);
 }
 }
 
-function showAns(m){
-document.getElementById("ans").innerHTML=m;
-}
-
+/* HEARTS */
 function hearts(){
 let h=document.createElement("div");
 h.className="heart";
