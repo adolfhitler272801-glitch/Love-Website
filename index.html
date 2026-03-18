@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Pondatti ❤️</title>
 
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            padding: 40px;
+            overflow-x: hidden;
+        }
+
+        .box {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #ff4d6d;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            color: pink;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+
+    <script>
+        // Button message
+        function showMessage() {
+            alert("Chaarmi ❤️, I may not be there with you, but I promise I’ll always be there for you 💖");
+        }
+
+        // Typing effect
+        let text = "I didn’t plan to fall for you… but I’m really glad I did ❤️";
+        let i = 0;
+
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 50);
+            }
+        }
+
+        // Days counter
+        function daysTogether() {
+            let start = new Date("Jan 10, 2026");
+            let now = new Date();
+            let diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+            document.getElementById("days").innerHTML = diff + " days with you ❤️";
+        }
+
+        // Floating hearts generator
+        function createHearts() {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHearts, 300);
+
+        window.onload = function() {
+            typing();
+            daysTogether();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
+
+    <h1>Hey Chaarmi Rachael ❤️</h1>
+
+    <div class="box">
+        <h2>How It All Started 💫</h2>
+        <p>It all started on January 10… just two people talking on Instagram.  
+        I didn’t expect that simple conversation would become something so special.</p>
+    </div>
+
+    <div class="box">
+        <h2>Our Story 💖</h2>
+        <p>We started as friends… but something about you felt different.  
+        Our vibes matched so well, and slowly you became an important part of my life.</p>
+    </div>
+
+    <div class="box">
+        <h2>The Day I’ll Never Forget 💌</h2>
+        <p>On February 15, I told you how I feel…  
+        And when you said yes, it became one of the happiest moments for me 💖</p>
+    </div>
+
+    <div class="box">
+        <h2 id="typing"></h2>
+    </div>
+
+    <div class="box">
+        <h2 id="days"></h2>
+    </div>
+
+    <div class="box">
+        <button onclick="showMessage()">Click Me ❤️</button>
+    </div>
+
+</body>
+</html>
